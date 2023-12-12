@@ -6,3 +6,4 @@ git clone https://github.com/andre059/project_django_kursach_7
 cd project
 3. Установите зависимости:
 pip install -r requirements.txt
+4. Установите виртуальное окружение venv 
