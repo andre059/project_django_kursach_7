@@ -12,23 +12,42 @@ class HabitsHabitTestCase(APITestCase):
         """Тестирование создание привычки"""
 
         data = {
-            "place": "Test",
-            "time": 100,
-            "action": "пробежка",
-            "sign_pleasant_habit": "True",
-            "periodicity": 1,
-            "award": "класс",
-            "time_to_execute": "120",
-            "public": "None"
+            "place": "test",
+            "time": "2023-12-12T20:14:07.295779+03:00",
+            "action": "бег",
+            "sign_pleasant_habit": True,
+            "periodicity": 7,
+            "award": "здоровье",
+            "time_to_execute": 120,
+            "public": True,
         }
         response = self.client.post(
             '/habit/',
             data=data
         )
 
-        print(response)
+        print(response.json())
 
         self.assertEqual(
             response.status_code,
             status.HTTP_201_CREATED
+        )
+
+        print(response.json())
+
+        self.assertEqual(
+            response.json(),
+            {
+                "id": 28,
+                "place": "test",
+                "time": "2023-12-12T20:14:07.295779+03:00",
+                "action": "бег",
+                "sign_pleasant_habit": True,
+                "periodicity": 7,
+                "award": "здоровье",
+                "time_to_execute": 120,
+                "public": True,
+                "related_habit": None,
+                "client": 1
+            }
         )
