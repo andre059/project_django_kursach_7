@@ -12,5 +12,5 @@ class UserViewSet(viewsets.ModelViewSet):
 
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated | UserIsStaff]
     pagination_class = HabitsPaginator
