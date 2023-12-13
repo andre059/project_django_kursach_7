@@ -1,5 +1,5 @@
+from datetime import datetime
 from django.db import models
-
 from users.models import User, NULLABLE
 
 
@@ -7,7 +7,7 @@ class Habit(models.Model):
     """Привычка"""
 
     place = models.CharField(max_length=300, verbose_name='Место, выполнения привычки')
-    time = models.DateTimeField(auto_now_add=True, verbose_name='Время, выполнения привычки')
+    time = models.DateTimeField(default=datetime.now, verbose_name='Время, выполнения привычки')
     action = models.CharField(max_length=300, verbose_name='Действие')
 
     sign_pleasant_habit = models.BooleanField(default=False, verbose_name='Признак приятной привычки')
