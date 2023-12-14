@@ -1,7 +1,7 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
 
-from habits.paginators import HabitsPaginator
 from users.models import User
 from users.permissions import UserIsStaff
 from users.serliazers import UserSerializer
@@ -13,4 +13,4 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated | UserIsStaff]
-    pagination_class = HabitsPaginator
+    pagination_class = PageNumberPagination
