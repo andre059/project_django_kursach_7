@@ -51,7 +51,7 @@ class HabitDestroyAPIView(generics.DestroyAPIView):
     permission_classes = [UserIsStaff]
 
 
-class UserHabitListAPIView(generics.ListAPIView):
+class ClientHabitListAPIView(generics.ListAPIView):
     """Список привычек текущего пользователя с пагинацией"""
 
     serializer_class = HabitSerializer
@@ -59,5 +59,5 @@ class UserHabitListAPIView(generics.ListAPIView):
     pagination_class = HabitsPaginator
 
     def get_queryset(self):
-        user = self.request.user
-        return Habit.objects.filter(user=user)
+        client = self.request.user
+        return Habit.objects.filter(client=client)

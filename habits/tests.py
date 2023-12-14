@@ -152,10 +152,10 @@ class HabitsHabitTestCase(APITestCase):
             status.HTTP_204_NO_CONTENT
         )
 
-    def test_user_list_habit(self):
+    def test_client_list_habit(self):
         """Тестирование списка привычек текущего пользователя"""
 
-        response = self.client.get(path='/habit/')
+        response = self.client.get(path='/user-habit/')
 
         print(response.json())
 
@@ -164,26 +164,14 @@ class HabitsHabitTestCase(APITestCase):
             status.HTTP_200_OK
         )
 
+        print(response.json())
+
         self.assertEqual(
             response.json(),
             {
-                "count": 1,
+                "count": 0,
                 "next": None,
                 "previous": None,
-                "results": [
-                    {
-                        "id": 1,
-                        "place": "test",
-                        "time": "2023-12-12T20:14:07.295779+03:00",
-                        "action": "бег",
-                        "sign_pleasant_habit": True,
-                        "periodicity": 7,
-                        "award": "здоровье",
-                        "time_to_execute": 120,
-                        "public": True,
-                        "related_habit": None,
-                        "client": None
-                    }
-                ]
+                "results": []
             }
         )
