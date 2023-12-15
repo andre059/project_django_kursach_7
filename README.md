@@ -40,5 +40,5 @@
     
     - *CSU_SET_PASSWORD = 'Пароль для файла csu.py'*
     
-7. Запустите проект:
-   python manage.py runserver 
+7. ### Запустите проект:
+   ### python manage.py runserver 
