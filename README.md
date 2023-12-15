@@ -18,7 +18,7 @@
 5. Установите зависимости из файла requirements.txt:
    pip install -r requirements.txt
 6. Настройте файл settings.py находящийся в папке config:
-   >DATABASES_NAME = Название папки куда вы клонировали проект 
+   >DATABASES_NAME = Название папки куда вы клонировали проект;
    >DATABASES_USER = Переменная, которая должна содержать имя пользователя для подключения к базе данных PostgreSQL
    >DATABASES_PASSWORD = Пароль к вашей базе данных
    >SECRET_KEY = 'тут должен быть ваш секретный ключь'
