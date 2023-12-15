@@ -8,16 +8,15 @@
 
 ## Установка
 
-1. Установите Python 3.11 и выше
-2. Создайте папку, куда будете клонировать проект
-
-3. Скачайте репозиторий проекта:
-   git clone https://github.com/andre059/project_django_kursach_7
-4. Установите виртуальное окружение:
-   env и активируйте его env\Scripts\activate.ps1
-5. Установите зависимости из файла requirements.txt:
-   pip install -r requirements.txt
-6. Настройте файл settings.py находящийся в папке config:
+1. # Установите Python 3.11 и выше
+2. # Создайте папку, куда будете клонировать проект
+3. # Скачайте репозиторий проекта:
+   # git clone https://github.com/andre059/project_django_kursach_7
+4. # Установите виртуальное окружение:
+   # env и активируйте его env\Scripts\activate.ps1
+5. # Установите зависимости из файла requirements.txt:
+   # pip install -r requirements.txt
+6. # Настройте файл settings.py находящийся в папке config:
     
     -DATABASES_NAME = Название папки куда вы клонировали проект
     
