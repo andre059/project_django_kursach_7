@@ -12,3 +12,5 @@ python-dotenv~=1.0.0
 attrs
 coreapi
 tasks~=2.8.0
+redis
+flake8
