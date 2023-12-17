@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 
-class TimetoexecuteValidator:
+class TimeToExecuteValidator:
     """Время выполнения должно быть не больше 120 секунд."""
 
     def __call__(self, value: int) -> bool:
@@ -25,19 +25,19 @@ class RelatedHabitAwardValidator:
         return attrs
 
 
-class RelatedHabitSignpleasanthabitValidator:
+class RelatedHabitSignPleasantHabitValidator:
     """В связанные привычки могут попадать только привычки с признаком приятной привычки."""
 
     def __call__(self, attrs):
-        related_habit = attrs.get('related_habit')
+        related_habit = attrs.get('related_habit', {})
 
-        if related_habit and not related_habit.sign_pleasant_habit:
+        if related_habit and not related_habit.get('sign_pleasant_habit', False):
             raise serializers.ValidationError("Связанная привычка должна быть действительной приятной привычкой")
 
         return attrs
 
 
-class SignpleasanthabitHabitValidator:
+class SignPleasantHabitHabitValidator:
     """У приятной привычки не может быть вознаграждения или связанной привычки."""
 
     def __call__(self, attrs):
