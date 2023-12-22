@@ -14,3 +14,6 @@ coreapi
 tasks~=2.8.0
 redis
 flake8
+djangorestframework_simplejwt
+drf_yasg
+django-cors-headers
