@@ -1,14 +1,20 @@
 version: '3'
 
 services:
+
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+
   db:
     image: postgres
-    env_file:
-      - .env
+#    env_file:
+#      - .env
     environment:
-      - POSTGRES_DB=os.getenv(DATABASES_NAME)
-      - POSTGRES_USER=os.getenv(DATABASES_USER)
-      - POSTGRES_PASSWORD=os.getenv(DATABASES_PASSWORD)
+#      - POSTGRES_DB=os.getenv(DATABASES_NAME)
+#      - POSTGRES_USER=os.getenv(DATABASES_USER)
+      - POSTGRES_PASSWORD=mypassword
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - pg_data:/var/lib/postgresql/data/pgdata
@@ -22,9 +28,12 @@ services:
 
   app:
     build: .
+    tty: true
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - '8011:8000'
+    volumes:
+      - .:/code
     depends_on:
       db:
         condition: service_healthy
