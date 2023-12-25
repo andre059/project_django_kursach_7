@@ -9,12 +9,9 @@ services:
 
   db:
     image: postgres
-#    env_file:
-#      - .env
+    env_file:
+      - .env
     environment:
-#      - POSTGRES_DB=os.getenv(DATABASES_NAME)
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=mypassword
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - pg_data:/var/lib/postgresql/data/pgdata

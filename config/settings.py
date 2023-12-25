@@ -91,9 +91,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',  # os.getenv('DATABASES_NAME'),
-        'USER': 'postgres',  # os.getenv('DATABASES_USER'),
-        'PASSWORD': 'mypassword',  # os.getenv('DATABASES_PASSWORD'),
+        'NAME': os.getenv('POSTGRES_DB'),  # os.getenv('DATABASES_NAME'),
+        'USER': os.getenv('POSTGRES_USER'),  # os.getenv('DATABASES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # os.getenv('DATABASES_PASSWORD'),
         'HOST': 'db'
     }
 }
@@ -186,7 +186,7 @@ SWAGGER_SETTINGS = {
 }
 
 CELERY_BROKER_URL = 'redis://redis:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://redis:6379'
 CELERY_TIMEZONE = "Europe/Moscow"
 CELERY_TASK_TRACK_STARTED = True
 
