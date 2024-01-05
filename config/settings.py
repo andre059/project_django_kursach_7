@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
- 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres71',  # os.getenv('POSTGRES_DB'),  # os.getenv('DATABASES_NAME'),
+        'NAME': 'postgres',  # os.getenv('POSTGRES_DB'),  # os.getenv('DATABASES_NAME'),
         'USER': 'postgres',  # os.getenv('POSTGRES_USER'),  # os.getenv('DATABASES_USER'),
         'PASSWORD': 'mypassword',  # os.getenv('POSTGRES_PASSWORD'),  # os.getenv('DATABASES_PASSWORD'),
         'HOST': 'db'
