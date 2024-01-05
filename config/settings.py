@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-w)2_8oen(*-+%!&*i#k0^tql=g5c+1*cwg(q3ebb!vs77#2thg'  # os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,9 +91,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),  # os.getenv('DATABASES_NAME'),
-        'USER': os.getenv('POSTGRES_USER'),  # os.getenv('DATABASES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # os.getenv('DATABASES_PASSWORD'),
+        'NAME': 'postgres71',  # os.getenv('POSTGRES_DB'),  # os.getenv('DATABASES_NAME'),
+        'USER': 'postgres',  # os.getenv('POSTGRES_USER'),  # os.getenv('DATABASES_USER'),
+        'PASSWORD': 'mypassword',  # os.getenv('POSTGRES_PASSWORD'),  # os.getenv('DATABASES_PASSWORD'),
         'HOST': 'db'
     }
 }
@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
- 
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
