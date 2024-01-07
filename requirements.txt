@@ -18,3 +18,4 @@ flake8
 djangorestframework_simplejwt
 drf_yasg
 django-cors-headers
+gunicorn
