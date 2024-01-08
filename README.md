@@ -28,8 +28,8 @@
 3. Скачайте репозиторий проекта:
    git clone https://github.com/andre059/project_django_kursach_7
 
-4. Установите виртуальное окружение:
-   env и активируйте его env\Scripts\activate.ps1
+4. Установите виртуальное окружение env python -m venv env :
+   активируйте его env\Scripts\activate.ps1
 
 5. Установите зависимости из файла requirements.txt:
    pip install -r requirements.txt
