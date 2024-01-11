@@ -58,6 +58,41 @@
     - *CSU_SET_PASSWORD = 'Пароль для файла csu.py'Запустите проекpython manage.py runserverДоступ к веб-интерфейсОткройте браузер и перейдите по адресу http://localhost:8000.
 
 
+### Инструкция по запуску проекта
+
+Убедитесь, что на вашем сервере установлен Docker и Docker Compose.
+Если Docker и Docker Compose не установлены, используйте следующие команды для установки:
+
+##### Установка Docker
+
+- sudo apt update
+- sudo apt install docker.io
+
+##### Установка Docker Compose
+
+- sudo apt install docker-compose
+
+##### Шаги по установке и запуску
+
+1. Склонируйте репозиторий с проектом на ваш сервер:
+    - git clone <URL репозитория>
+    - cd <название папки проекта>
+
+2. Создайте файл .env в корневой папке проекта и заполните его значениями для переменных, используемых в postgres:  
+    - POSTGRES_USER=ваше_имя_пользователя_базы_данных
+    - POSTGRES_PASSWORD=ваш_пароль
+    - POSTGRES_DB=ваша_база_данных
+
+3. Запустите docker-compose для сборки и запуска контейнеров:
+    - docker-compose up --build
+    Эта команда создаст и запустит контейнеры для Redis, Postgres, Celery и Celery Beat.
+    После успешного запуска контейнеров, ваше приложение будет доступно по адресу вашего сервера и порту 8011.
+
+4. Для остановки контейнеров выполните:
+    - docker-compose down
+    Это закончит работу контейнеров и освободит ресурсы вашего сервера.
+
+
 ### Стек технологий использованный в проекте:
 [![Python](https://img.shields.io/badge/-Python-464646?style=flat&logo=Python&logoColor=ffffff&color=043A6B)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/-Django-464646?style=flat&logo=Django&logoColor=ffffff&color=043A6B)](https://www.djangoproject.com/)

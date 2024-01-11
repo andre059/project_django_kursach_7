@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w)2_8oen(*-+%!&*i#k0^tql=g5c+1*cwg(q3ebb!vs77#2thg'  # os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['51.250.93.104']
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOST', '127.0.0.1')]
 
 
 # Application definition
@@ -91,8 +91,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres717',  # os.getenv('POSTGRES_DB'),  # os.getenv('DATABASES_NAME'),
-        'USER': 'postgres',  # os.getenv('POSTGRES_USER'),  # os.getenv('DATABASES_USER'),
+        'NAME': os.getenv('POSTGRES_DB'),  # os.getenv('DATABASES_NAME'),
+        'USER': os.getenv('POSTGRES_USER'),  # os.getenv('DATABASES_USER'),
         # 'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # os.getenv('DATABASES_PASSWORD'),
         # 'HOST': 'db'
     }
@@ -215,4 +215,3 @@ TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CELERY_IMPORTS = ('tasks',)
 
 CSU_SET_PASSWORD = os.getenv('CSU_SET_PASSWORD')
-
